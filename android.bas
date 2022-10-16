@@ -1,5 +1,6 @@
 dim a as string
 dim b as string
+dim c as string
 cls
 color ,2
 print "creating new project"
@@ -7,8 +8,8 @@ print "project name : ";
 input a
 print "project companie name : ";
 input b
-print a
-print b
+c=a+"."+b+".app"
+print c
 mkdir "./"+a
 mkdir "./"+a+"/java"
 mkdir "./"+a+"/src"
@@ -27,5 +28,9 @@ shell "bash -c 'cp "+"./0" +" ./"+a+"/res/drawable-mdpi/ic_launcher.png'"
 shell "bash -c 'cp "+"./2" +" ./"+a+"/res/values/string.xml'"
 shell "bash -c 'cp "+"./1" +" ./"+a+"/res/values/style.xml'"
 shell "bash -c 'cp "+"./3" +" ./"+a+"/res/layout/main.xml'"
-shell "bash -c 'cp "+"./4" +" ./"+a+"/AndroidManifest.xml'"
-shell "bash -c 'cp "+"./5" +" ./"+a+"/src/"+a+"/"+b+"/app"+"/MainActivity.java'"
+shell "bash -c 'cp "+"./6" +" ./"+a+"/AndroidManifest.xml'"
+shell "bash -c 'printf "+c+"'>>./"+a+"/AndroidManifest.xml"
+shell "bash -c 'cat 4"+"'>>./"+a+"/AndroidManifest.xml"
+shell "bash -c 'cp "+"./7" +" ./"+a+"/src/"+a+"/"+b+"/app"+"/MainActivity.java'"
+shell "bash -c 'printf "+c+"'>>./"+a+"/src/"+a+"/"+b+"/app"+"/MainActivity.java"
+shell "bash -c 'cat 5"+"'>>./"+a+"/src/"+a+"/"+b+"/app"+"/MainActivity.java"
